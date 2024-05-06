@@ -1,0 +1,36 @@
+{
+  "name": "playwright_typescript",
+  "version": "1.0.0",
+  "description": "This is a test automation framework using playwright and Typecript for UI and API tests",
+  "main": "first.js",
+  "scripts": {
+    "prepare": "husky",
+    "ui:test": "npx playwright test   --project=chromium ",
+    "api:test": "npx playwright test  --project=apiTest",
+    "eslint": "npx eslint .",
+    "eslint:fix": "npx eslint . --fix",
+    "prettier": "npx prettier . --check",
+    "prettier:fix": "npx prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.1.0",
+    "husky": "^9.0.11",
+    "prettier": "3.2.5",
+    "typescript-eslint": "^7.8.0"
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
+}

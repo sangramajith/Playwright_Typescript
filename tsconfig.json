@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "target": "es5",
+    "typeRoots": ["./node_modules/@types", "./e2e/types/global"],
+    "paths": {
+      "@e2e/*": ["e2e/*"],
+      "@pages/*": ["e2e/pages/*"]
+    }
+  }
+}
