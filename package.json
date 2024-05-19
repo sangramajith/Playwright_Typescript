@@ -5,7 +5,8 @@
   "main": "first.js",
   "scripts": {
     "prepare": "husky",
-    "ui:test": "npx playwright test   --project=chromium ",
+    "ui:test": "npx playwright test   --project=chromium",
+    "ui:test2": "npx playwright test   --project=skipLoginTest",
     "api:test": "npx playwright test  --project=apiTest",
     "eslint": "npx eslint .",
     "eslint:fix": "npx eslint . --fix",
@@ -31,6 +32,7 @@
     "typescript-eslint": "^7.8.0"
   },
   "dependencies": {
+    "pdf2json": "^3.1.2",
     "typescript": "^5.4.5"
   }
 }

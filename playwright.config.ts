@@ -12,7 +12,7 @@ export default defineConfig({
 
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 2 : 2,
   reporter: "html",
   timeout: 30000 * 2,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -29,15 +29,30 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+    name:"setup",
+    //testMatch: "./e2e/tests/ui/setup/auth.spec.ts",
+    use: { ...devices["Desktop Chrome"] ,
+    
+  },
+  testDir: "./e2e/tests/ui/setup/",
+  
+    },
+    {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
-      testDir: "./e2e/tests/ui/",
+      use: { ...devices["Desktop Chromium"] ,
+      },
+      testDir: "./e2e/tests/ui/smoke/",
+      
     },
 
     {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-      testDir: "./e2e/tests/ui/",
+      name: "skipLoginTest",
+      use: { ...devices["Desktop Firefox"],
+      storageState:'./e2e/configs/authFiles/user.json',
+      },
+      dependencies:["setup"],
+      testDir: "./e2e/tests/ui/sanity",
+     
     },
     {
       name: "ApiTest",
