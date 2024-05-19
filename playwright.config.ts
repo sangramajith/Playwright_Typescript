@@ -12,7 +12,7 @@ export default defineConfig({
 
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : 2,
+  workers: process.env.CI ? 1 : 2,
   reporter: "html",
   timeout: 30000 * 2,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
