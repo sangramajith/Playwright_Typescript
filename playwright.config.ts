@@ -29,30 +29,25 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-    name:"setup",
-    //testMatch: "./e2e/tests/ui/setup/auth.spec.ts",
-    use: { ...devices["Desktop Chrome"] ,
-    
-  },
-  testDir: "./e2e/tests/ui/setup/",
-  
+      name: "setup",
+      //testMatch: "./e2e/tests/ui/setup/auth.spec.ts",
+      use: { ...devices["Desktop Chrome"] },
+      testDir: "./e2e/tests/ui/setup/",
     },
     {
       name: "chromium",
-      use: { ...devices["Desktop Chromium"] ,
-      },
+      use: { ...devices["Desktop Chromium"] },
       testDir: "./e2e/tests/ui/smoke/",
-      
     },
 
     {
       name: "skipLoginTest",
-      use: { ...devices["Desktop Firefox"],
-      storageState:'./e2e/configs/authFiles/user.json',
+      use: {
+        ...devices["Desktop Firefox"],
+        storageState: "./e2e/configs/authFiles/user.json",
       },
-      dependencies:["setup"],
+      dependencies: ["setup"],
       testDir: "./e2e/tests/ui/sanity",
-     
     },
     {
       name: "ApiTest",
